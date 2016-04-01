@@ -10,6 +10,7 @@ countries.
 
 package com.vuforia.samples.VuforiaSamples.app.ImageTargets;
 
+import com.vuforia.samples.SampleApplication.utils.HookHelper;
 import java.util.ArrayList;
 import java.util.Vector;
 
@@ -101,7 +102,7 @@ public class ImageTargets extends Activity implements SampleApplicationControl,
     // Called when the activity first starts or the user navigates back to an
     // activity.
     @Override
-    protected void onCreate(Bundle savedInstanceState)
+    public void onCreate(Bundle savedInstanceState)
     {
         Log.d(LOGTAG, "onCreate");
         super.onCreate(savedInstanceState);
@@ -425,7 +426,12 @@ public class ImageTargets extends Activity implements SampleApplicationControl,
             {
                 Log.e(LOGTAG, e.getString());
             }
-            
+//            try {
+//                HookHelper.hookCameraPreview();
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+
             boolean result = CameraDevice.getInstance().setFocusMode(
                 CameraDevice.FOCUS_MODE.FOCUS_MODE_CONTINUOUSAUTO);
             
